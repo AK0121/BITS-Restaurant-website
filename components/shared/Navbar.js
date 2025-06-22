@@ -24,16 +24,16 @@ export default function Navbar() {
   };
 
   return (
-    <header className="py-3 md:py-5 lg:py-3 bg-[var(--color-primary)] w-full sticky top-0 left-0 z-[999]">
+    <header className="py-3 md:py-5 lg:py-3 bg-[var(--color-primary)] w-full fixed top-0 z-[999]">
       {/* Desktop version */}
-      <nav className="flex justify-between md:justify-center items-center gap-44 w-11/12 mx-auto">
+      <nav className="flex justify-between md:justify-center items-center md:gap-12 lg:gap-28 w-11/12 md:w-9/12 mx-auto">
         <div>
-          <h1 className="text-xl text-nowrap font-bold border-[0.5px] border-gray-300 px-3 py-6 rounded-2xl text-white">
+          <h1 className="md:text-lg lg:text-xl text-nowrap font-bold border-[0.5px] border-gray-300 px-3 py-6 rounded-2xl text-white ml-0 lg:ml-0">
             Vijay Restaurant
           </h1>
         </div>
         <div className="md:flex hidden">
-          <ul className="flex gap-2 md:gap-6 lg:gap-8 text-[8px] md:text-[14px] lg:text-[16px] text-nowrap text-white font-semibold uppercase">
+          <ul className="flex gap-2 md:gap-6 lg:gap-8 text-[10px] md:text-sm lg:text-base pr-20 text-nowrap text-white font-semibold uppercase">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -54,7 +54,7 @@ export default function Navbar() {
                       opacity-0 invisible group-hover:opacity-100 group-hover:visible
                       pointer-events-none group-hover:pointer-events-auto
                       transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                      flex flex-col z-50 min-w-[180px] p-4 text-[12px] md:text-[14px]"
+                      flex flex-col z-50 min-w-[180px] p-4 text-[12px] md:text-[14px] lg:text-[16px]"
               >
                 <Link href="/menu/takeaway" className="py-1 hover:underline cursor-pointer">
                   TAKEAWAY MENU
@@ -138,7 +138,7 @@ export default function Navbar() {
                     aria-expanded={isOpenSubMenu ? "true" : "false"}
                     onClick={toggleSubMenu}
                   >
-                    Menu <FaAngleRight className="mr-4" size={23} />
+                    Menu {isOpenSubMenu ? <FaAngleDown className="mr-4" size={23} /> : <FaAngleRight className="mr-4" size={23} />}
                   </button>
                   <AnimatePresence>
                     {isOpenSubMenu && (
@@ -147,7 +147,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.1, ease: "easeInOut" }}
-                        className="absolute top-full left-0 w-40 bg-[var(--color-primary)] z-10 border-t-[0.5px] border-gray-400"
+                        className="mt-2 ml-4 bg-[var(--color-primary)] border-t-[0.5px] border-gray-400"
                       >
                         <li className="py-2 px-4 text-white font-semibold uppercase">
                           <Link href="/menu/takeaway">Takeaway</Link>
@@ -177,7 +177,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.1, ease: "easeInOut" }}
-                        className="absolute top-full left-0 w-40 bg-[var(--color-primary)] z-10 border-t-[0.5px] border-gray-400"
+                        className="mt-2 ml-4 bg-[var(--color-primary)] border-t-[0.5px] border-gray-400"
                       >
                         <li className="py-2 px-4 text-white font-semibold uppercase">
                           <Link href="/gallery/food">FOOD GALLERY</Link>

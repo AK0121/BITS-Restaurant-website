@@ -9,3 +9,21 @@ body {
   --color-primary: #1e3a2b;
   --color-secondary: #234131;
 }
+
+.line-h-0\.5 { line-height: 0.5; }
+.line-h-0\.75 { line-height: 0.75; }
+.line-h-1 { line-height: 1; }
+.line-h-1\.25 { line-height: 1.25; }
+.line-h-1\.5 { line-height: 1.5; }
+.line-h-1\.75 { line-height: 1.75; }
+.line-h-2 { line-height: 2; }
+.line-h-2\.5 { line-height: 2.5; }
+.line-h-3 { line-height: 3; }
+.line-h-3\.5 { line-height: 3.5; }
+.line-h-4 { line-height: 4; }
+.line-h-4\.5 { line-height: 4.5; }
+.line-h-5 { line-height: 5; }
+
+.card-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

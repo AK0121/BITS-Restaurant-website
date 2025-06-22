@@ -40,6 +40,7 @@ const Footer = () => {
           <Image
             src="/footer-food-image.png"
             alt="Delicious South Indian food with chai"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
             className="object-contain rounded-md shadow-lg"
             priority
