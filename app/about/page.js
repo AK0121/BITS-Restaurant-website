@@ -60,9 +60,9 @@ const About = () => {
       {/* Main Content Section */}
       <section className="py-20 px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="w-full flex flex-col-reverse lg:flex-row gap-2 sm:gap-6 lg:gap-12 items-center">
             {/* Images */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 w-10/12 mx-auto lg:w-1/2">
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -75,7 +75,7 @@ const About = () => {
                   alt="Restaurant interior with warm lighting and elegant seating"
                   width={500}
                   height={500}
-                  className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
 
@@ -84,14 +84,14 @@ const About = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="overflow-hidden h-64 rounded-xl card-shadow"
+                className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
                   src="/about-page-img-1.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
                   width={500}
                   height={500}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
               <motion.div
@@ -99,14 +99,14 @@ const About = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="overflow-hidden h-64 rounded-xl card-shadow"
+                className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
                   src="/about-page-img-3.jpg"
                   alt="Restaurant interior with warm lighting and elegant seating"
                   width={500}
                   height={500}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
 
@@ -115,20 +115,20 @@ const About = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="overflow-hidden relative bottom-32 rounded-xl card-shadow"
+                className="overflow-hidden relative bottom-0 sm:bottom-32 rounded-xl card-shadow"
               >
                 <Image
                   src="/about-page-img-4.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
                   width={500}
                   height={500}
-                  className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
             </div>
 
             {/* Content */}
-            <div>
+            <div className="w-10/12 mx-auto lg:w-1/2">
               <motion.h2
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
