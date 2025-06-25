@@ -70,13 +70,13 @@ export default function BestSellers() {
                 index % 2 === 0 ? "-mt-12" : ""
               }`}
             >
-              <div className="relative group w-full max-w-xs card-shadow overflow-hidden">
+              <div className="relative group w-full h-[300px] max-w-xs card-shadow overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-[300px] object-cover"
+                  fill
+                  sizes="(min-width:768px) 30vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <h4 className="mt-4 text-lg font-semibold text-black">

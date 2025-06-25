@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaPaperPlane, FaStar } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
-import { FaMapPin } from 'react-icons/fa';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -20,8 +19,6 @@ const ContactPage = () => {
       [e.target.name]: e.target.value
     });
   };
-
-  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -88,7 +85,7 @@ const ContactPage = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl md:text-2xl font-light max-w-3xl mx-auto"
           >
-            Experience the finest dining at Vijay Restaurant, BITS Pilani's culinary gem
+            Experience the finest dining at Vijay Restaurant, BITS Pilani&apos;s culinary gem
           </motion.p>
         </div>
       </motion.section>
@@ -186,7 +183,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-bold text-xl text-gray-800 mb-2">Email</h3>
                       <p className="text-gray-600 text-lg">info@vijayrestaurant.com</p>
-                      <p className="text-gray-500">We'll get back to you soon!</p>
+                      <p className="text-gray-500">We&apos;ll get back to you soon!</p>
                     </div>
                   </div>
                 </motion.div>
@@ -198,7 +195,7 @@ const ContactPage = () => {
               <div className="bg-white rounded-3xl p-8 shadow-2xl border border-orange-100">
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-bold text-gray-800 mb-3">Send us a Message</h3>
-                  <p className="text-gray-600">Have a question or want to make a reservation? We'd love to hear from you!</p>
+                  <p className="text-gray-600">Have a question or want to make a reservation? We&apos;d love to hear from you!</p>
                 </div>
 
                 <div className="space-y-6">

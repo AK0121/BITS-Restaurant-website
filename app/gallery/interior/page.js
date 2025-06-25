@@ -9,7 +9,6 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import { useState } from "react";
 import Image from "next/image";
-import { useTransition } from "@/components/shared/TransitionProvider";
 
 const images = [
   "/uthappam-img.jpg",
@@ -22,10 +21,8 @@ const images = [
   "/paneer-img.jpg",
 ];
 
-const page = () => {
-  const plugins = [Zoom, Captions];
+const InteriorPage = () => {
   const [index, setIndex] = useState(-1);
-    const { loading } = useTransition();
 
   return (
     <div>
@@ -110,4 +107,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default InteriorPage;

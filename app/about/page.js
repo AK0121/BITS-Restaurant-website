@@ -168,7 +168,7 @@ const About = () => {
                 <p>
                   We take pride in our exceptional service, warm hospitality,
                   and attention to detail. Our staff is dedicated to ensuring
-                  that every guest feels welcome and valued, whether you're a
+                  that every guest feels welcome and valued, whether you&apos;re a
                   student, a professor, or just visiting the campus. So come,
                   indulge in the flavors of the world, and let us pamper you
                   with our signature Vijay Restaurant experience.
