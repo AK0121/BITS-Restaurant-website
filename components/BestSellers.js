@@ -5,7 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const bestSellers = [
   {
@@ -39,13 +40,15 @@ const bestSellers = [
 ];
 
 export default function BestSellers() {
+  const ref=useRef(null)
+  const isInView = useInView(ref, {once: true, margin:"-100px"})
   return (
     <section className="pt-20 pb-36 bg-[#f8fdfd] px-6 md:px-10">
       <div className="max-w-6xl mx-auto text-center">
         <h3 className="text-sm font-semibold text-green-900 uppercase tracking-wider">
           Vijay Restaurant
         </h3>
-        <h2 className="text-4xl md:text-5xl font-bold text-black mt-2 mb-12">
+        <h2 ref={ref} className="text-4xl md:text-5xl font-bold text-black mt-2 mb-12">
           Best Seller Items
         </h2>
 
@@ -70,7 +73,11 @@ export default function BestSellers() {
                 index % 2 === 0 ? "-mt-12" : ""
               }`}
             >
-              <div className="relative group w-full h-[300px] max-w-xs card-shadow overflow-hidden">
+              <motion.div
+              initial={{y: 300, opacity:0}}
+              animate={isInView? {y:0, opacity:1}: {}}
+              transition={{duration: 0.5, ease:"easeIn"}}
+                className="relative group w-full h-[300px] max-w-xs card-shadow overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -78,7 +85,7 @@ export default function BestSellers() {
                   sizes="(min-width:768px) 30vw, 50vw"
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
               <h4 className="mt-4 text-lg font-semibold text-black">
                 {item.name}
               </h4>

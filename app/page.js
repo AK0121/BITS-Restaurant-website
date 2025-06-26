@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-    <section className="relative w-full h-screen md:h-[90vh] mt-20 bg-white overflow-hidden">
+    <section className="relative w-full h-[120vh] lg:h-[90vh] mt-20 bg-white overflow-hidden">
       {/* Decorative Floating Images */}
       <MotionImage
         initial={{ x: -170, opacity: 0.6 }}
@@ -33,7 +33,7 @@ export default function Home() {
         alt="Herb top center"
         width={120}
         height={120}
-        className="absolute top-5 left-1/2 w-24 h-24 transform -translate-x-1/2 object-contain z-0"
+        className="absolute top-16 md:top-10 left-1/2 w-24 h-24 transform -translate-x-1/2 object-contain z-0"
       />
       <MotionImage
         initial={{ y: 120 }}
@@ -54,7 +54,7 @@ export default function Home() {
         alt="Leaf top right"
         height={200}
         width={200}
-        className="absolute -top-3 lg:-top-10 -right-10 lg:right-28 h-auto w-56 md:w-80 lg:w-[30rem] object-contain z-0"
+        className="absolute -top-3 lg:-top-10 -right-20 lg:right-28 h-auto w-44 md:w-80 lg:w-[30rem] object-contain z-0"
       />
       <MotionImage
         initial={{ y: 120 }}
@@ -118,7 +118,7 @@ export default function Home() {
             alt="Paneer curry bowl"
             width={300}
             height={300}
-            className="object-contain absolute top-0 lg:-top-40 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0 w-96 h-96 lg:w-[21rem] lg:h-[21rem]"
+            className="object-contain absolute z-50 top-0 lg:-top-40 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0 w-96 h-96 lg:w-[21rem] lg:h-[21rem]"
             priority
           />
         </div>

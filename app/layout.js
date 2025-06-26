@@ -8,6 +8,9 @@ import { montserrat } from "@/lib/font";
 export const metadata = {
   title: "Vijay Restaurant",
   description: "One of the best restaurant in BITS",
+  icons: {
+    icon : "/favicon.png"
+  }
 };
 
 export default function RootLayout({ children }) {

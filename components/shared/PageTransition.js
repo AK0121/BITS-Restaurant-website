@@ -24,7 +24,7 @@ export default function PageTransition({ children }) {
         }
         return prev + 1;
       });
-    }, 1);
+    }, 10);
 
     return () => {
       clearInterval(interval);

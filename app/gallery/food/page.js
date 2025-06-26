@@ -82,9 +82,10 @@ const FoodPage = () => {
             <Image
               src={src}
               alt={`Gallery Image ${i + 1}`}
-              width={500}
-              height={300}
+              width={200}
+              height={200}
               className="object-cover w-full h-full scale-100 group-hover:scale-95 card-shadow transition-all duration-300"
+              loading='lazy'
             />
           </div>
         ))}

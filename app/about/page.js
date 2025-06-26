@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="min-h-screen mt-24 bg-gradient-to-b from-slate-800 to-slate-900">
+    <div className="min-h-screen mt-24 bg-[var(--color-primary)]">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -73,8 +73,8 @@ const About = () => {
                 <Image
                   src="/about-page-img-2.jpg"
                   alt="Restaurant interior with warm lighting and elegant seating"
-                  width={500}
-                  height={500}
+                  width={140}
+                  height={140}
                   className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
@@ -89,8 +89,8 @@ const About = () => {
                 <Image
                   src="/about-page-img-1.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
-                  width={500}
-                  height={500}
+                  width={150}
+                  height={150}
                   className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
@@ -104,8 +104,8 @@ const About = () => {
                 <Image
                   src="/about-page-img-3.jpg"
                   alt="Restaurant interior with warm lighting and elegant seating"
-                  width={500}
-                  height={500}
+                  width={150}
+                  height={150}
                   className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
@@ -120,8 +120,8 @@ const About = () => {
                 <Image
                   src="/about-page-img-4.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
-                  width={500}
-                  height={500}
+                  width={150}
+                  height={150}
                   className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>

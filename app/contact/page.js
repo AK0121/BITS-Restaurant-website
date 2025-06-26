@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaPaperPlane, FaStar } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaPaperPlane } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const ContactPage = () => {

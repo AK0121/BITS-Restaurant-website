@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import { useState } from "react";
@@ -37,7 +36,7 @@ const InteriorPage = () => {
           <motion.h1
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 2, duration: 0.6 }}
+            transition={{ duration: 0.6 }}
             className="text-6xl font-bold mb-8 tracking-wide text-white"
           >
             INTERIOR GALLERY
@@ -46,7 +45,7 @@ const InteriorPage = () => {
           <motion.p
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 2, duration: 0.6 }}
+            transition={{ duration: 0.6 }}
             className="text-lg leading-relaxed max-w-3xl text-white"
           >
             At Vijay Restaurant, BITS Pilani, we believe in the power of flavors
@@ -61,7 +60,7 @@ const InteriorPage = () => {
         <motion.nav
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 2, duration: 0.5 }}
+          transition={{ duration: 0.5 }}
           className="absolute top-8 right-8"
         >
           <div className="flex space-x-8 text-sm font-medium">
@@ -76,7 +75,7 @@ const InteriorPage = () => {
       <motion.div
       initial={{ opacity: 0, y: 300 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 2, duration: 0.5 }}
+      transition={{ duration: 0.5 }}
        className="w-11/12 my-10 mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {images.map((src, i) => (
           <div
@@ -87,9 +86,10 @@ const InteriorPage = () => {
             <Image
               src={src}
               alt={`Gallery Image ${i + 1}`}
-              width={600}
-              height={400}
+              width={200}
+              height={200}
               className="object-cover w-full h-full scale-100 group-hover:scale-95 card-shadow transition-all duration-300"
+              loading="lazy"
             />
           </div>
         ))}

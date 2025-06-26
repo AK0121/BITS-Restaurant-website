@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaCopyright, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-// import { Clock, Mail, MapPin, Phone, Heart } from 'lucide-react';
+import { FaFacebook, FaInstagram, } from "react-icons/fa";
 import {FaClock, FaMapPin, FaPhone, FaHeart} from 'react-icons/fa';
 import {IoMail} from 'react-icons/io5';
 
@@ -164,8 +163,9 @@ const Footer = () => {
                       src="/footer-food-image.png"
                       alt="Delicious South Indian food with chai"
                       className="w-full h-full object-cover"
-                      width={500}
-                      height={500}
+                      width={400}
+                      height={400}
+                      loading='lazy'
                     />
                     {/* Image Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
