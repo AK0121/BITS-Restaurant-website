@@ -1,6 +1,5 @@
 "use client";
 
-import { poppins } from "@/lib/font";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AboutSection from "@/components/AboutSection";
@@ -11,7 +10,7 @@ export default function Home() {
   const MotionImage = motion.create(Image);
   const { loading } = useTransition();
 
-  return (
+  return  (
     <>
     <section className="relative w-full h-[120vh] lg:h-[90vh] mt-20 bg-white overflow-hidden">
       {/* Decorative Floating Images */}
@@ -23,7 +22,7 @@ export default function Home() {
         alt="Leaf top left"
         width={160}
         height={160}
-        className="absolute -top-1 left-0 w-24 h-24 md:w-40 md:h-40 object-contain z-0"
+        className="hidden sm:block absolute -top-1 left-0 w-24 h-24 md:w-40 md:h-40 object-contain z-[0]"
       />
       <MotionImage
         initial={{ y: -120, opacity: 0.6 }}
@@ -33,7 +32,7 @@ export default function Home() {
         alt="Herb top center"
         width={120}
         height={120}
-        className="absolute top-16 md:top-10 left-1/2 w-24 h-24 transform -translate-x-1/2 object-contain z-0"
+        className="absolute top-5 md:top-10 left-1/2 w-24 h-24 transform -translate-x-1/2 object-contain z-0"
       />
       <MotionImage
         initial={{ y: 120 }}
@@ -54,7 +53,7 @@ export default function Home() {
         alt="Leaf top right"
         height={200}
         width={200}
-        className="absolute -top-3 lg:-top-10 -right-20 lg:right-28 h-auto w-44 md:w-80 lg:w-[30rem] object-contain z-0"
+        className="absolute rotate-[450deg] sm:rotate-0 top-5 sm:-top-3 lg:-top-10 -right-20 lg:right-28 h-auto w-44 md:w-80 lg:w-[30rem] object-contain z-0"
       />
       <MotionImage
         initial={{ y: 120 }}
@@ -78,14 +77,14 @@ export default function Home() {
       />
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-16 pt-48 flex flex-col lg:flex-row items-center justify-between gap-1 lg:gap-12">
+      <div className="font-body relative z-10 max-w-7xl mx-auto px-16 pt-48 flex flex-col lg:flex-row items-center justify-between gap-1 lg:gap-12">
         {/* Text Content */}
-        <div className="flex flex-col justify-center pt-10 items-center lg:justify-start lg:items-start gap-8 w-full lg:w-1/2">
+        <div className="flex flex-col justify-center pt-0 sm:pt-10 items-center lg:justify-start lg:items-start gap-8 w-full lg:w-1/2">
           <motion.h1
             initial={{ opacity: 0, x: -320 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeIn" }}
-            className="text-3xl md:text-5xl text-nowrap font-extrabold uppercase"
+            className="text-5xl sm:text-nowrap font-extrabold uppercase text-wrap text-center font-title"
           >
             Vijay Restaurant
           </motion.h1>
@@ -93,7 +92,7 @@ export default function Home() {
             initial={{ opacity: 0, x: -320 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeIn", delay: 0.2 }}
-            className={`text-lg text-center lg:text-left text-gray-700 w-10/12 ${poppins.className}`}
+            className={`text-lg text-center lg:text-left text-gray-700 w-10/12`}
           >
             At Vijay Restaurant, we believe in the power of flavors to transport
             you on a culinary journey like no other.

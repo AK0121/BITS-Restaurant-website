@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="min-h-screen mt-24 bg-[var(--color-primary)]">
+    <div className="min-h-screen mt-16 sm:mt-24 bg-[var(--color-primary)]">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -58,9 +58,9 @@ const About = () => {
       </motion.section>
 
       {/* Main Content Section */}
-      <section className="py-20 px-8 bg-slate-50">
+      <section className="py-8 md:py-20 px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full flex flex-col-reverse lg:flex-row gap-2 sm:gap-6 lg:gap-12 items-center">
+          <div className="w-full flex flex-col lg:flex-row gap-20 sm:gap-6 lg:gap-12 items-center">
             {/* Images */}
             <div className="grid grid-cols-2 gap-4 w-10/12 mx-auto lg:w-1/2">
               <motion.div
@@ -144,7 +144,7 @@ const About = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-gray-600 flex justify-start gap-5 pb-40 flex-col text-lg leading-relaxed"
+                className="text-gray-600 flex justify-start gap-5 pb-10 flex-col text-lg leading-relaxed"
               >
                 <p>
                 At <span className="font-semibold text-slate-800">Vijay Restaurant</span>, a part of{" "}

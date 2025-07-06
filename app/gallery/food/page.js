@@ -29,7 +29,7 @@ const FoodPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative bg-no-repeat bg-center bg-cover py-20 px-8 z-10 mt-24"
+        className="relative bg-no-repeat bg-center bg-cover py-20 px-8 z-10 mt-16 sm:mt-24"
         style={{ backgroundImage: "url('/zig-zag-img.svg')" }}
       >
         <div className="max-w-4xl mx-auto">
