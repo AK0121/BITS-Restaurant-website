@@ -102,9 +102,9 @@ export default function Navbar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="md:hidden fixed top-0 left-0 w-full h-screen bg-[var(--color-primary)] z-10"
             >

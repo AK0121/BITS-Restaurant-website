@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaClock} from "react-icons/fa";
+import { GiCoffeeCup } from "react-icons/gi";
+import { LuUtensilsCrossed } from "react-icons/lu";
 
 export default function MenuPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState({});
 
   const menuImages = [
-    { src: "/menu-1.png", alt: "Main Menu", title: "Main Dishes" },
-    { src: "/menu-2.png", alt: "Beverages Menu", title: "Beverages & Desserts" }
+    { src: "/menu-1.webp", alt: "Main Menu", title: "Main Dishes" },
+    { src: "/menu-2.webp", alt: "Beverages Menu", title: "Beverages & Desserts" }
   ];
 
   const nextImage = () => {
@@ -32,9 +35,9 @@ export default function MenuPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              {/* <div className="bg-white/10 backdrop-blur-sm rounded-full p-4">
-                <Utensils className="w-12 h-12 text-amber-300" />
-              </div> */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-full p-4">
+                <LuUtensilsCrossed className="w-12 h-12 text-amber-300" />
+              </div>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
               Our <span className="text-amber-300">Exquisite</span> Menu
@@ -44,7 +47,7 @@ export default function MenuPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-amber-200">
               <div className="flex items-center gap-2">
-                {/* <Clock className="w-5 h-5" /> */}
+                <FaClock className="w-5 h-5" />
                 <span>Open Daily 08:30 AM - 10:30 PM</span>
               </div>
             </div>
@@ -123,17 +126,17 @@ export default function MenuPage() {
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group"
+                  className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                   aria-label="Previous menu"
                 >
-                  {/* <ChevronLeft className="w-6 h-6 text-amber-600 group-hover:text-amber-700" /> */}
+                  <FaArrowAltCircleLeft className="w-6 h-6 text-amber-600 group-hover:text-amber-700" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white cursor-pointer shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 group"
                   aria-label="Next menu"
                 >
-                  {/* <ChevronRight className="w-6 h-6 text-amber-600 group-hover:text-amber-700" /> */}
+                  <FaArrowAltCircleRight className="w-6 h-6 text-amber-600 group-hover:text-amber-700" />
                 </button>
               </>
             )}
@@ -164,7 +167,7 @@ export default function MenuPage() {
         <div className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative">
-            {/* <Coffee className="w-16 h-16 text-amber-200 mx-auto mb-6" /> */}
+            <GiCoffeeCup className="w-16 h-16 text-amber-200 mx-auto mb-6" />
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Ready to Experience Amazing Flavors?
             </h2>

@@ -103,7 +103,7 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
             className="bg-[#1e3a2b] text-white cursor-pointer px-8 py-3 w-48 font-semibold border-2 border-[#1e3a2b] hover:bg-white hover:text-black transition-all ease-in-out duration-300"
           >
-            Order Now
+            See The Feast
           </motion.button>
         </div>
 

@@ -31,7 +31,7 @@ const Footer = () => {
   };
 
   const socialIcons = [
-    { Icon: FaInstagram, color: "from-purple-600 to-pink-500", href: "#" },
+    { Icon: FaInstagram, color: "from-purple-600 to-pink-500", href: "https://www.instagram.com/vijay_restaurant4u/" },
     { Icon: FaFacebook, color: "from-blue-600 to-blue-500", href: "#" },
   ];
 
