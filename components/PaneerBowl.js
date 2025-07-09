@@ -5,7 +5,7 @@ import { Suspense, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
 function PaneerModel(props) {
-  const gltf = useGLTF("/models/paneer.glb");
+  const gltf = useGLTF("/models/Paneer.glb");
   const meshRef = useRef();
   
   // Gentle floating animation
