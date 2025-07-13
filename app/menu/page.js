@@ -1,19 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaClock} from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaClock, FaTimes, FaSearchPlus, FaPhoneAlt} from "react-icons/fa";
 import { GiCoffeeCup } from "react-icons/gi";
 import { LuUtensilsCrossed } from "react-icons/lu";
 
 export default function MenuPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const menuImages = [
     { src: "/menu-1.webp", alt: "Main Menu", title: "Main Dishes" },
     { src: "/menu-2.webp", alt: "Beverages Menu", title: "Beverages & Desserts" }
   ];
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % menuImages.length);
@@ -26,6 +53,106 @@ export default function MenuPage() {
   const handleImageLoad = (index) => {
     setImageLoaded(prev => ({ ...prev, [index]: true }));
   };
+
+  const openModal = () => {
+    if (isMobile) {
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // Modal Component
+  const MenuModal = () => (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+      <div className="relative w-full max-w-sm max-h-[100vh] bg-white rounded-lg overflow-hidden">
+        {/* Modal Header */}
+        <div onClick={closeModal} className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] pt-12 h-40 flex justify-center items-center gap-2 text-4xl text-white">
+            <h3 className="text-center font-bold">close</h3>
+              <FaTimes className="pt-0.5" />
+        </div>
+
+        {/* Modal Content */}
+        <div className="relative bg-gray-100 h-[70vh]">
+          {menuImages.map((menu, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                index === currentImageIndex
+                  ? 'opacity-100 translate-x-0'
+                  : index < currentImageIndex
+                  ? 'opacity-0 -translate-x-full'
+                  : 'opacity-0 translate-x-full'
+              }`}
+            >
+              {/* Loading Shimmer */}
+              {!imageLoaded[index] && (
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer"></div>
+                </div>
+              )}
+              
+              <Image
+                src={menu.src}
+                alt={menu.alt}
+                fill
+                sizes="100vw"
+                className={`object-contain transition-opacity duration-500 ${
+                  imageLoaded[index] ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => handleImageLoad(index)}
+                priority={index === 0}
+                quality={90}
+              />
+            </div>
+          ))}
+
+          {/* Navigation Arrows */}
+          {menuImages.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110 group"
+                aria-label="Previous menu"
+              >
+                <FaArrowAltCircleLeft className="w-5 h-5 text-amber-600 group-hover:text-amber-700" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110 group"
+                aria-label="Next menu"
+              >
+                <FaArrowAltCircleRight className="w-5 h-5 text-amber-600 group-hover:text-amber-700" />
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Modal Footer */}
+        <div className="p-4 bg-white border-t">
+          <div className="flex justify-center gap-2 mb-3">
+            {menuImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? 'bg-amber-400 scale-125'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`View ${menuImages[index].title}`}
+              />
+            ))}
+          </div>
+          <p className="text-sm text-gray-600 text-center">
+            Pinch to zoom for better view
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
@@ -119,10 +246,22 @@ export default function MenuPage() {
                   />
                 </div>
               ))}
+
+              {/* Mobile: Tap to open modal overlay */}
+              {isMobile && (
+                <div 
+                  className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer opacity-0 hover:opacity-100 transition-opacity duration-300"
+                  onClick={openModal}
+                >
+                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 shadow-lg">
+                    <FaSearchPlus className="w-8 h-8 text-amber-600" />
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Navigation Arrows */}
-            {menuImages.length > 1 && (
+            {/* Navigation Arrows - Hidden on mobile */}
+            {menuImages.length > 1 && !isMobile && (
               <>
                 <button
                   onClick={prevImage}
@@ -158,6 +297,13 @@ export default function MenuPage() {
                 ))}
               </div>
             )}
+
+            {/* Mobile: Tap to view hint */}
+            {isMobile && (
+              <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg animate-pulse">
+                Tap to view
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -175,16 +321,19 @@ export default function MenuPage() {
               Book your table now and let our chefs create an unforgettable dining experience for you
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-amber-400 cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+              <a href="https://wa.me/+917014303606" className="bg-white text-amber-400 cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                 Reserve Table
-              </button>
-              <button className="bg-amber-400 text-white cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
-                Order Online
-              </button>
+              </a>
+              <a href="tel:+917014303606" className="bg-amber-400 text-white cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-1">
+                Order Online <FaPhoneAlt className="animate-bounce"/>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && <MenuModal />}
 
       {/* Custom Styles for Shimmer Animation */}
       <style jsx>{`
