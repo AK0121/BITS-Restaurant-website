@@ -69,7 +69,7 @@ export default function MenuPage() {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
       <div className="relative w-full max-w-sm max-h-[100vh] bg-white rounded-lg overflow-hidden">
         {/* Modal Header */}
-        <div onClick={closeModal} className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] pt-12 h-40 flex justify-center items-center gap-2 text-4xl text-white">
+        <div onClick={closeModal} className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] pt-14 h-40 flex justify-center items-center gap-2 text-4xl text-white">
             <h3 className="text-center font-bold">close</h3>
               <FaTimes className="pt-0.5" />
         </div>
@@ -108,26 +108,6 @@ export default function MenuPage() {
               />
             </div>
           ))}
-
-          {/* Navigation Arrows */}
-          {menuImages.length > 1 && (
-            <>
-              <button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110 group"
-                aria-label="Previous menu"
-              >
-                <FaArrowAltCircleLeft className="w-5 h-5 text-amber-600 group-hover:text-amber-700" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110 group"
-                aria-label="Next menu"
-              >
-                <FaArrowAltCircleRight className="w-5 h-5 text-amber-600 group-hover:text-amber-700" />
-              </button>
-            </>
-          )}
         </div>
 
         {/* Modal Footer */}
@@ -324,7 +304,7 @@ export default function MenuPage() {
               <a href="https://wa.me/+917014303606" className="bg-white text-amber-400 cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                 Reserve Table
               </a>
-              <a href="tel:+917014303606" className="bg-amber-400 text-white cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-1">
+              <a href="tel:+917014303606" className="bg-amber-400 text-white cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-1 justify-center">
                 Order Online <FaPhoneAlt className="animate-bounce"/>
               </a>
             </div>
