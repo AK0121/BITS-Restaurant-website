@@ -71,7 +71,7 @@ export default function GalleryPage() {
             className="text-lg leading-relaxed max-w-3xl text-white"
           >
             Moments we cherish, experiences we share, and the stories we tell.
-            Welcome to "Our Memories", a collection that captures the essence of
+            Welcome to Our Memories, a collection that captures the essence of
             our journey together.
           </motion.p>
         </div>
