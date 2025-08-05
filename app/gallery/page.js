@@ -13,36 +13,37 @@ import "react-photo-album/styles.css";
 
 // ✅ Photos array with required width & height
 const images = [
-  { src: "/vr-images/1.JPG", width: 800, height: 600 },
-  { src: "/vr-images/4.JPG", width: 800, height: 600 },
-  { src: "/vr-images/5.JPG", width: 600, height: 900 },
-  { src: "/vr-images/6.JPG", width: 1200, height: 800 },
-  { src: "/vr-images/7.JPG", width: 1000, height: 700 },
-  { src: "/vr-images/8.JPG", width: 700, height: 700 },
-  { src: "/vr-images/9.JPG", width: 700, height: 700 },
-  { src: "/vr-images/10.JPG", width: 700, height: 700 },
-  { src: "/vr-images/13.JPG", width: 700, height: 700 },
-  { src: "/vr-images/14.JPG", width: 700, height: 700 },
-  { src: "/vr-images/15.JPG", width: 700, height: 700 },
-  { src: "/vr-images/16.JPG", width: 700, height: 700 },
-  { src: "/vr-images/17.JPG", width: 700, height: 700 },
-  { src: "/vr-images/18.JPG", width: 700, height: 700 },
-  { src: "/vr-images/19.JPG", width: 700, height: 700 },
-  { src: "/vr-images/20.JPG", width: 700, height: 700 },
-  { src: "/vr-images/21.JPG", width: 700, height: 700 },
-  { src: "/vr-images/22.JPG", width: 700, height: 700 },
-  { src: "/vr-images/23.JPG", width: 700, height: 700 },
-  { src: "/vr-images/24.PNG", width: 700, height: 700 },
-  { src: "/vr-images/25.jpeg", width: 700, height: 700 },
-  { src: "/vr-images/26.jpeg", width: 700, height: 700 },
-  { src: "/vr-images/27.jpeg", width: 700, height: 700 },
-  { src: "/vr-images/28.jpg", width: 700, height: 700 },
+  { src: "/vr-images/1.JPG", width: 800, height: 600, title: "Veg Spring Roll" },
+  { src: "/vr-images/4.JPG", width: 800, height: 600, title: "Chilly Paneer" },
+  { src: "/vr-images/5.JPG", width: 600, height: 900, title: "Veg Fried Rice" },
+  { src: "/vr-images/6.JPG", width: 1200, height: 800, title: "Cheese Pav Bhaji" },
+  { src: "/vr-images/7.JPG", width: 1000, height: 700, title: "Veg Fried Rice" },
+  { src: "/vr-images/8.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/9.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/10.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/13.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/14.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/15.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/16.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/17.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/18.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/19.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/20.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/21.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/22.JPG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/23.JPG", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/24.PNG", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/25.jpeg", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/26.jpeg", width: 700, height: 700, title: "Chilly Paneer" },
+  { src: "/vr-images/27.jpeg", width: 700, height: 700, title: "Veg Spring Roll" },
+  { src: "/vr-images/28.jpg", width: 700, height: 700, title: "Chilly Paneer" },
 ];
 
 export default function GalleryPage() {
   const [index, setIndex] = useState(-1);
 
   const scrollY = useScroll().scrollY;
+  const yTransform = useTransform(scrollY, [0, 1000], [0, -20]);
 
   return (
     <GalleryLayout>
@@ -103,7 +104,8 @@ export default function GalleryPage() {
           renderPhoto={({ photo, imageProps }) => (
             <Image
               {...imageProps}
-              style={{ y: useTransform(scrollY, [0, 1000], [0, -20]) }}
+              style={{ y: yTransform }}
+              alt={photo.title}
               className="rounded-xl shadow-lg hover:scale-[1.03] transition-transform"
               placeholder="blur"
               blurDataURL="/tiny-placeholder.jpg"
