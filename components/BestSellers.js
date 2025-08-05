@@ -1,41 +1,51 @@
 "use client";
 
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
+import {Carousel} from "./ui/carsousel";
 
-const bestSellers = [
+const slideData = [
   {
     name: "Veg Spring Roll",
-    image: "/paneer-img.jpg",
+    src: "/vr-images/13.JPG",
+    button: "Order Now",
+    title: "Veg Spring Roll",
   },
   {
     name: "Chilly Paneer",
-    image: "/uthappam-img.jpg",
+    src: "/vr-images/18.JPG",
+    button: "Order Now",
+    title: "Chilly Paneer",
   },
   {
     name: "Veg Fried Rice",
-    image: "/rice-img.jpg",
+    src: "/vr-images/15.JPG",
+    button: "Order Now",
+    title: "Veg Fried Rice",
   },
   {
     name: "Cheese Pav Bhaji",
-    image: "/dosa-img.jpg",
+    src: "/vr-images/16.JPG",
+    button: "Order Now",
+    title: "Cheese Pav Bhaji",
   },
   {
     name: "Veg Fried Rice",
-    image: "/rice-img.jpg",
+    src: "/vr-images/17.JPG",
+    button: "Order Now",
+    title: "Veg Fried Rice",
   },
   {
     name: "Chilly Paneer",
-    image: "/uthappam-img.jpg",
+    src: "/vr-images/14.JPG",
+    button: "Order Now",
+    title: "Chilly Paneer",
   },
   {
     name: "Veg Spring Roll",
-    image: "/paneer-img.jpg",
+    src: "/vr-images/19.JPG",
+    button: "Order Now",
+    title: "Veg Spring Roll",
   },  
 ];
 
@@ -51,47 +61,7 @@ export default function BestSellers() {
         <h2 ref={ref} className="text-4xl md:text-5xl font-bold text-black mt-2 mb-12">
           Best Seller Items
         </h2>
-
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            smoothTransition: true,
-          }}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 4, spaceBetween: 30 },
-          }}
-        >
-          {bestSellers.map((item, index) => (
-            <SwiperSlide
-              key={index}
-              className={`flex flex-col items-center py-20  ${
-                index % 2 === 0 ? "-mt-12" : ""
-              }`}
-            >
-              <motion.div
-              initial={{y: 300, opacity:0}}
-              animate={isInView? {y:0, opacity:1}: {}}
-              transition={{duration: 0.5, ease:"easeIn"}}
-                className="relative group w-full h-[300px] max-w-xs card-shadow overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  sizes="(min-width:768px) 30vw, 50vw"
-                  className="object-cover"
-                />
-              </motion.div>
-              <h4 className="mt-4 text-lg font-semibold text-black">
-                {item.name}
-              </h4>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <Carousel slides={slideData} />
       </div>
     </section>
   );

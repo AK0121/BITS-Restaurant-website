@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp} from "react-icons/fa";
 import {FaClock, FaMapPin, FaPhone, FaHeart} from 'react-icons/fa';
 import {IoMail} from 'react-icons/io5';
 
@@ -32,7 +32,7 @@ const Footer = () => {
 
   const socialIcons = [
     { Icon: FaInstagram, color: "from-purple-600 to-pink-500", href: "https://www.instagram.com/vijay_restaurant4u/" },
-    { Icon: FaFacebook, color: "from-blue-600 to-blue-500", href: "#" },
+    { Icon: FaWhatsapp, color: "from-blue-600 to-blue-500", href: "https://wa.me/919251103606" },
   ];
 
   return (
@@ -133,6 +133,8 @@ const Footer = () => {
                       href={href}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`bg-gradient-to-r from-green-500 to-emerald-500 p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group`}
                     >
                       <Icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
@@ -192,9 +194,9 @@ const Footer = () => {
           className="border-t border-white/10 bg-black/20 backdrop-blur-sm"
         >
               <div className="flex items-center flex-row justify-center py-2 space-x-2 text-gray-300">
-                <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-semibold">© 2025 Vijay Restaurant. Made with</span>
+                <span className="text-xs sm:text-sm md:text-lg lg:text-lg font-semibold">© 2025 Vijay Restaurant. Made with</span>
                 <FaHeart className="w-4 h-4 text-green-500 fill-current animate-pulse" />
-                <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-semibold">in BITS Pilani</span>
+                <span className="text-xs sm:text-sm md:text-lg lg:text-lg font-semibold">in BITS Pilani</span>
               </div>
         </motion.div>
       </div>

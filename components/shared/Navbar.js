@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { RiHome2Line, RiInformationLine, RiGalleryLine, RiMailLine } from "react-icons/ri";
+import { MdOutlineMenuBook, MdOutlineRestaurantMenu  } from "react-icons/md";
+import { IoFastFood } from "react-icons/io5";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenSubMenuGallery, setIsOpenSubMenuGallery] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -16,10 +17,6 @@ export default function Navbar() {
 
   const closeToggle = () => {
     setIsOpen(false);
-  };
-
-  const toggleSubMenuGallery = () => {
-    setIsOpenSubMenuGallery(!isOpenSubMenuGallery);
   };
 
   return (
@@ -58,29 +55,11 @@ export default function Navbar() {
 
             <div className="relative group">
               <div className="flex items-center gap-1 cursor-pointer">
-                <p>Gallery</p>
-                <FaAngleDown />
-              </div>
-
-              {/* Fixed Dropdown Box - No gap */}
-              <div
-                className="absolute top-full left-0 bg-[var(--color-secondary)] text-white rounded shadow-md
-        opacity-0 invisible group-hover:opacity-100 group-hover:visible
-        pointer-events-none group-hover:pointer-events-auto
-        transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-        flex flex-col z-50 min-w-[180px] p-4 pt-6 text-[12px] md:text-[14px]"
-              >
-                <Link
-                  href="/gallery/food"
-                  className="py-1 hover:underline cursor-pointer"
+              <Link
+                  href="/gallery"
+                  className="cursor-pointer"
                 >
-                  FOOD GALLERY
-                </Link>
-                <Link
-                  href="/gallery/interior"
-                  className="py-1 hover:underline cursor-pointer"
-                >
-                  INTERIOR GALLERY
+                  GALLERY
                 </Link>
               </div>
             </div>
@@ -93,9 +72,10 @@ export default function Navbar() {
 
         <button
           onClick={handleToggle}
-          className="text-white md:hidden cursor-pointer"
+          className="flex items-center gap-2 bg-gray-200/10 text-white md:hidden rounded-full px-4 py-2 cursor-pointer"
         >
-          <RiMenu3Line className="size-8" />
+          <IoFastFood className="text-2xl" />
+          <span className="text-2xl">Menu</span>
         </button>
 
         {/* Mobile version */}
@@ -120,16 +100,27 @@ export default function Navbar() {
               </h1>
                 <button
                   onClick={handleToggle}
-                  className="text-white md:hidden cursor-pointer"
+                  className="flex items-center gap-2 bg-gray-200/10 text-white md:hidden rounded-full px-4 py-2 cursor-pointer"
                 >
-                  <RiCloseLine className="size-10" />
-                </button>
+                  <span className="text-2xl">Close</span>
+                  <MdOutlineRestaurantMenu className="size-10" />
+                </button> 
               </div>
-              <div className="flex pt-8 pl-8 flex-col gap-10 text-4xl text-white font-semibold uppercase">
-                <Link onClick={closeToggle} href="/">
+              <div className="flex pt-8 flex-col gap-10 w-4/5 mx-auto">
+                <Link
+                  onClick={closeToggle}
+                  href="/"
+                  className="text-3xl text-center text-white font-semibold uppercase hover:text-gray-300 transition duration-300 ease-in-out bg-[rgba(255,255,255,0.1)] rounded-xl px-6 py-3 w-full mx-auto flex items-center gap-4"
+                >
+                  <RiHome2Line className="size-6" />
                   Home
                 </Link>
-                <Link onClick={closeToggle} href="/about">
+                <Link
+                  onClick={closeToggle}
+                  href="/about"
+                  className="text-3xl text-center text-white font-semibold uppercase hover:text-gray-300 transition duration-300 ease-in-out bg-[rgba(255,255,255,0.1)] rounded-xl px-6 py-3 w-full mx-auto flex items-center gap-4"
+                >
+                  <RiInformationLine className="size-6" />
                   About Us
                 </Link>
 
@@ -139,43 +130,34 @@ export default function Navbar() {
                     href="/menu"
                     onClick={closeToggle}
                   >
-                    Menu
+                    <span className="text-3xl text-center text-white font-semibold uppercase hover:text-gray-300 transition duration-300 ease-in-out bg-[rgba(255,255,255,0.1)] rounded-xl px-6 py-3 w-full mx-auto flex items-center gap-4">
+                      <MdOutlineMenuBook className="size-6" />
+                      Menu
+                    </span>
                   </Link>
 
                 </div>
 
                 <div className="relative">
-                  <button
+                  <Link
                     className="flex items-center justify-between w-full"
-                    type="button"
-                    aria-haspopup="true"
-                    aria-expanded={isOpenSubMenuGallery ? "true" : "false"}
-                    onClick={toggleSubMenuGallery}
+                    href="/gallery"
+                    onClick={closeToggle}
                   >
-                    Gallery{" "}
-                    {isOpenSubMenuGallery ? (
-                      <FaAngleDown className="mr-4" size={23} />
-                    ) : (
-                      <FaAngleRight className="mr-4" size={23} />
-                    )}
-                  </button>
-
-                  <AnimatePresence>
-                    {isOpenSubMenuGallery && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.1, ease: "easeInOut" }}
-                        className="mt-2 ml-4 bg-[var(--color-primary)] border-t-[0.5px] border-gray-400 flex flex-col gap-2"
-                      >
-                        <Link onClick={closeToggle} href="/gallery/food" className="pt-5 pb-2 px-4 text-white font-semibold uppercase">FOOD GALLERY</Link>
-                        <Link onClick={closeToggle} href="/gallery/interior" className="py-2 px-4 text-white font-semibold uppercase">INTERIOR GALLERY</Link>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                    <span className="text-3xl text-center text-white font-semibold uppercase hover:text-gray-300 transition duration-300 ease-in-out bg-[rgba(255,255,255,0.1)] rounded-xl px-6 py-3 w-full mx-auto flex items-center gap-4">
+                      <RiGalleryLine className="size-6" />
+                      Gallery
+                    </span>
+                  </Link>
                 </div>
-                  <Link onClick={closeToggle} href="/contact">Contact Us</Link>
+                  <Link
+                    onClick={closeToggle}
+                    href="/contact"
+                    className="text-3xl text-center text-white font-semibold uppercase hover:text-gray-300 transition duration-300 ease-in-out bg-[rgba(255,255,255,0.1)] rounded-xl px-6 py-3 w-full mx-auto flex items-center gap-4"
+                  >
+                    <RiMailLine className="size-6" />
+                    Contact Us
+                  </Link>
               </div>
             </motion.div>
           )}

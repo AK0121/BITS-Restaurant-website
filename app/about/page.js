@@ -71,10 +71,10 @@ const About = () => {
                 className="overflow-hidden rounded-xl card-shadow"
               >
                 <Image
-                  src="/about-page-img-2.jpg"
+                  src="/vr-images/5.JPG"
                   alt="Restaurant interior with warm lighting and elegant seating"
-                  width={140}
-                  height={140}
+                  width={200}
+                  height={200}
                   className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
@@ -87,11 +87,11 @@ const About = () => {
                 className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
-                  src="/about-page-img-1.jpg"
+                  src="/vr-images/10.JPG"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
-                  width={150}
-                  height={150}
-                  className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  width={500}
+                  height={500}
+                  className="w-full h-56 sm:h-64 object-cover object-left hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
               <motion.div
@@ -102,10 +102,10 @@ const About = () => {
                 className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
-                  src="/about-page-img-3.jpg"
+                  src="/vr-images/9.JPG"
                   alt="Restaurant interior with warm lighting and elegant seating"
-                  width={150}
-                  height={150}
+                  width={200}
+                  height={200}
                   className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
@@ -118,10 +118,10 @@ const About = () => {
                 className="overflow-hidden relative bottom-0 sm:bottom-32 rounded-xl card-shadow"
               >
                 <Image
-                  src="/about-page-img-4.jpg"
+                  src="/vr-images/7.JPG"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
-                  width={150}
-                  height={150}
+                  width={200}
+                  height={200}
                   className="w-full h-56 sm:h-96 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>

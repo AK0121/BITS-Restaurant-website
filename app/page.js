@@ -8,6 +8,7 @@ import { useTransition } from "@/components/shared/TransitionProvider";
 import PaneerBowl from "@/components/PaneerBowl";
 import Link from "next/link";
 
+
 export default function Home() {
   const MotionImage = motion.create(Image);
   const { loading } = useTransition();
@@ -79,7 +80,7 @@ export default function Home() {
         />
 
         {/* Main Content Container */}
-        <div className="font-body relative z-10 max-w-7xl mx-auto px-16 md:pt-48 pt-32 flex flex-col lg:flex-row items-center md:justify-between justify-center gap-1 lg:gap-12">
+        <div className="font-body relative z-10 max-w-7xl mx-auto px-16 md:pt-28 pt-32 flex flex-col lg:flex-row items-center md:justify-between justify-center gap-1 lg:gap-12">
           {/* Text Content */}
           <div className="flex flex-col justify-center pt-0 sm:pt-10 items-center lg:justify-start lg:items-start gap-8 w-full lg:w-1/2">
             <motion.h1
@@ -100,13 +101,22 @@ export default function Home() {
               transport you on a culinary journey like no other.
             </motion.p>
             <motion.div
+            className="flex flex-col lg:flex-row items-center gap-4"
               initial={{ opacity: 0, x: -320 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
             >
+              <a
+                href="https://wa.me/919251103606"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#1e3a2b] text-white px-8 py-3 w-48 font-semibold border-2 border-[#1e3a2b] hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block text-center"
+              >
+                Order Now
+              </a>
               <Link
                 href="/menu"
-                className="bg-[#1e3a2b] text-white px-8 py-3 w-48 font-semibold border-2 border-[#1e3a2b] hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block text-center"
+                className="bg-white text-[#1e3a2b] px-8 py-3 w-48 font-semibold border-2 border-[#1e3a2b] hover:bg-[#1e3a2b] hover:text-white transition-all ease-in-out duration-300 inline-block text-center"
               >
                 See The Feast
               </Link>
@@ -123,18 +133,4 @@ export default function Home() {
       <BestSellers />
     </>
   );
-}
-
-{
-  /* <MotionImage
-            initial={{ scale: 0, rotate: 360 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            src="/home-banner.png"
-            alt="Paneer curry bowl"
-            width={300}
-            height={300}
-            className="object-contain absolute z-50 top-0 lg:-top-40 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0 w-96 h-96 lg:w-[21rem] lg:h-[21rem]"
-            priority
-          /> */
 }
