@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className="flex relative justify-between md:justify-center items-center md:gap-12 lg:gap-28 w-11/12 md:w-9/12 mx-auto">
         <div className="flex-shrink-0">
             <Link href="/">
-              <h1 className="relative text-xl sm:text-4xl font-bold text-white border-[0.5px] border-white px-7 py-4 sm:py-5 rounded-2xl">
+              <h1 className="relative text-xl sm:text-4xl font-bold text-white border-[0.5px] border-white px-10 py-4 sm:py-5 rounded-2xl">
                 <span className="absolute top-1 sm:top-2 left-1/2 transform -translate-x-1/2 font-extralight text-gray-400 sm:text-[10px] text-[8px]">
                   since 1980
                 </span>
@@ -45,8 +45,6 @@ export default function Navbar() {
             <div>
               <Link href="/about">About Us</Link>
             </div>
-
-            {/* ✅ Fixed Dropdown Menu Item */}
             <div className="relative group">
               <div className="flex items-center gap-1 cursor-pointer">
                 <Link href="/menu" onClick={closeToggle}>Menu</Link>

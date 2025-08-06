@@ -53,7 +53,7 @@ export default function BestSellers() {
   const ref=useRef(null)
   const isInView = useInView(ref, {once: true, margin:"-100px"})
   return (
-    <section className="pt-20 pb-36 bg-[#f8fdfd] px-6 md:px-10">
+    <section className="pt-20 pb-36 bg-[#f8fdfd] px-6 md:px-10 overflow-x-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <h3 className="text-sm font-semibold text-green-900 uppercase tracking-wider">
           Vijay Restaurant

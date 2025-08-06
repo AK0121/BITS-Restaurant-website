@@ -27,7 +27,7 @@ export default function AboutSection() {
     <div className="absolute top-8 right-0 w-[70%] h-[75%] z-10">
       <div className="relative w-full h-full border-4 sm:border-8 md:border-12 border-white shadow-2xl">
         <Image
-          src="/about-img.JPG"
+          src="/about-img.jpg"
           alt="Vijay and his brother"
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 35vw, 25vw"
@@ -41,7 +41,7 @@ export default function AboutSection() {
     <div className="absolute bottom-0 left-0 w-[65%] h-[70%] z-20">
       <div className="relative w-full h-full border-4 sm:border-8 md:border-12 border-white shadow-2xl">
         <Image
-          src="/about-img-2.JPG"
+          src="/about-img-2.jpg"
           alt="Vijay Restaurant's Counter"
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"

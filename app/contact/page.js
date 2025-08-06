@@ -55,7 +55,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br mt-20 from-orange-50 via-white to-red-50">
+    <div className="min-h-screen bg-gradient-to-br mt-16 from-orange-50 via-white to-red-50">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}
