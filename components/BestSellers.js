@@ -6,46 +6,46 @@ import {Carousel} from "./ui/carsousel";
 
 const slideData = [
   {
-    name: "Veg Spring Roll",
+    name: "Mattar Paneer",
     src: "/vr-images/13.JPG",
     button: "Order Now",
-    title: "Veg Spring Roll",
+    title: "Mattar Paneer",
   },
   {
-    name: "Chilly Paneer",
+    name: "Dosa",
     src: "/vr-images/18.JPG",
     button: "Order Now",
-    title: "Chilly Paneer",
+    title: "Dosa",
   },
   {
-    name: "Veg Fried Rice",
+    name: "",
     src: "/vr-images/15.JPG",
     button: "Order Now",
     title: "Veg Fried Rice",
   },
   {
-    name: "Cheese Pav Bhaji",
-    src: "/vr-images/16.JPG",
-    button: "Order Now",
-    title: "Cheese Pav Bhaji",
-  },
-  {
     name: "Veg Fried Rice",
-    src: "/vr-images/17.JPG",
+    src: "/vr-images/16.JPG",
     button: "Order Now",
     title: "Veg Fried Rice",
   },
   {
-    name: "Chilly Paneer",
-    src: "/vr-images/14.JPG",
+    name: "Rabri",
+    src: "/vr-images/17.JPG",
     button: "Order Now",
-    title: "Chilly Paneer",
+    title: "Rabri",
   },
   {
-    name: "Veg Spring Roll",
+    name: "Paneer cutlet",
+    src: "/vr-images/14.JPG",
+    button: "Order Now",
+    title: "Paneer cutlet",
+  },
+  {
+    name: "Ice Mocha",
     src: "/vr-images/19.JPG",
     button: "Order Now",
-    title: "Veg Spring Roll",
+    title: "Ice Mocha",
   },  
 ];
 
