@@ -93,6 +93,7 @@ export default function GalleryPage() {
           </div>
         </motion.nav>
       </motion.section>
+      
 
       {/* Gallery Section */}
       <div className="px-8 py-16 bg-white">

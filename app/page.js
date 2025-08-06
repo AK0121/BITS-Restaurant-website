@@ -107,7 +107,7 @@ export default function Home() {
               transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
             >
               <a
-                href="https://wa.me/919251103606"
+                href="https://wa.openinapp.co/a5xz0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#1e3a2b] text-white px-8 py-3 w-48 font-semibold border-2 border-[#1e3a2b] hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block text-center"

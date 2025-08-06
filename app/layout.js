@@ -33,7 +33,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased ${poppins.variable} ${montserrat.className} overflow-x-hidden`}>
+      <body className={`antialiased ${poppins.variable} ${montserrat.variable} overflow-x-hidden`}>
         <TransitionProvider>
           <PageTransition />
           <Navbar />

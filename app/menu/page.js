@@ -301,7 +301,7 @@ export default function MenuPage() {
               Book your table now and let our chefs create an unforgettable dining experience for you
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/+917014303606" className="bg-white text-amber-400 cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+              <a href="https://wa.openinapp.co/a5xz0" className="bg-white text-amber-400 cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                 Reserve Table
               </a>
               <a href="tel:+917014303606" className="bg-amber-400 text-white cursor-pointer px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-1 justify-center">
