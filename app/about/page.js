@@ -71,7 +71,7 @@ const About = () => {
                 className="overflow-hidden rounded-xl card-shadow"
               >
                 <Image
-                  src="/vr-images/5.JPG"
+                  src="/vr-images/5.jpg"
                   alt="Restaurant interior with warm lighting and elegant seating"
                   width={200}
                   height={200}
@@ -87,7 +87,7 @@ const About = () => {
                 className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
-                  src="/vr-images/10.JPG"
+                  src="/vr-images/10.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
                   width={500}
                   height={500}
@@ -102,7 +102,7 @@ const About = () => {
                 className="overflow-hidden h-56 sm:h-64 rounded-xl card-shadow"
               >
                 <Image
-                  src="/vr-images/9.JPG"
+                  src="/vr-images/9.jpg"
                   alt="Restaurant interior with warm lighting and elegant seating"
                   width={200}
                   height={200}
@@ -118,7 +118,7 @@ const About = () => {
                 className="overflow-hidden relative bottom-0 sm:bottom-32 rounded-xl card-shadow"
               >
                 <Image
-                  src="/vr-images/7.JPG"
+                  src="/vr-images/7.jpg"
                   alt="Elegant dining area with crystal chandelier and wooden furniture"
                   width={200}
                   height={200}
